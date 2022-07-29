@@ -76,8 +76,8 @@ return (
 			</div>
 		</div>
 	</div>
-	<footer class="source">
-		<a class="source-link" rel="noreferrer" href="https://github.com/ElizabethVasilenko13/weather-app-react.git" target="_blank">Open-source code</a> by Elizabeth Vasilenko
+	<footer className="source">
+		<a className="source-link" rel="noreferrer" href="https://github.com/ElizabethVasilenko13/weather-app-react.git" target="_blank">Open-source code</a> by Elizabeth Vasilenko
 	</footer>
 	</div>
 );
