@@ -1,13 +1,190 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.wrapper {
+	max-width: 960px;
+	margin: 70px auto 5px;
+	background: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+	box-shadow: 10px 10px 30px rgb(0 0 0 / 15%);
+	border-radius: 50px;
+	color: #343434;
+	font-size: 18px;
+}
+.wrap {
+	padding: 6px 40px 40px;
+}
+.theme-sw {
+	padding-bottom: 6px;
+	text-align: center;
+	display: flex;
+	justify-content: right;
+}
+.theme-sw-text {
+	margin-right: 5px;
+	color: rgba(178, 179, 199, 0.74);
+}
+.switch-btn {
+	width: 65px;
+	height: 29px;
+	border-radius: 19px;
+	background: #bfbfbfc6;
+	z-index: 0;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	transition-duration: 300ms;
+}
+.switch-btn::after {
+	content: "";
+	height: 25px;
+	width: 25px;
+	border-radius: 17px;
+	background: #fff;
+	top: 2px;
+	left: 2px;
+	transition-duration: 300ms;
+	position: absolute;
+	z-index: 1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input[type="text"] {
+	height: 36px;
+	background-color: #f5f5f5;
+	border-radius: 100px;
+	border: none;
+	padding: 5px 0px 5px 15px;
+	filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.1));
+}
+
+.iput-btn {
+	font-size: 16px;
+	color: #f5f5f5;
+	background: #774cfe;
+	margin-left: 5px;
+	border: none;
+	border-radius: 30px;
+	padding: 5px 7px;
+}
+.local-time {
+	color: rgba(178, 179, 199, 0.74);
+	text-align: right;
+	margin-top: 5px;
+}
+.reduce-font {
+	font-size: 16px;
+}
+.icon-el {
+	display: flex;
+	align-items: center;
+}
+.icons__firs-page {
+	color: #774cfe;
+}
+.icon-text {
+	margin-left: 10px;
+}
+.day {
+	text-align: right;
+}
+.temperature {
+	background: linear-gradient(127.04deg, #ff68c0 9.06%, #774cfe 97.79%);
+	border-radius: 30px;
+	max-width: 200px;
+	color: #f5f5f5;
+	margin: 0 auto;
+	font-weight: 500;
+	padding: 30px;
+	padding-bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	margin: 45px auto;
+}
+.content-weater {
+	font-size: 20px;
+}
+.content-degrees {
+	display: block;
+	line-height: 90px;
+	font-size: 85px;
+}
+.link {
+	position: relative;
+	bottom: 76px;
+	left: 68px;
+	margin-left: 10px;
+}
+.link-degrees {
+	color: #f5f5f5;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 4px;
+}
+.icon-element {
+	filter: invert(99%) sepia(5%) saturate(492%) hue-rotate(209deg)
+	brightness(112%) contrast(92%);
+	position: relative;
+	top: 47px;
+	left: 11px;
+}
+.white-icon {
+	filter: invert(99%) sepia(5%) saturate(492%) hue-rotate(209deg) brightness(112%) contrast(92%);
+}
+.bottom-data {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.bottom-el {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.text-sbsc {
+	color: rgba(178, 179, 199, 0.74);
+}
+.second-part {
+	background: #f5f5f5;
+	border-radius: 50px;
+	padding: 30px;
+	filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.1));
+}
+.block-forecast {
+	background: linear-gradient(127.04deg, #ff68c0 9.06%, #774cfe 97.79%);
+	padding: 10px 20px;
+	border-radius: 30px;
+	color: #f5f5f5;
+	font-weight: 500;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.future-forecast-days {
+	display: flex;
+	justify-content: space-between;
+}
+.days-block {
+	margin: 0 5px 0 5px;
+	background-color: #f5f5f5;
+	border: 1px solid rgba(255, 104, 192, 0.29);
+	border-radius: 30px;
+	color: #343434;
+	box-shadow: 3px 3px 10px 1px rgb(117 76 254 / 10%);
+	padding: 20px 4px;
+}
+.block-title {
+	margin-bottom: 10px;
+}
+.weather-icon {
+	margin-bottom: 10px;
+	filter: invert(79%) sepia(35%) saturate(6248%) hue-rotate(276deg) brightness(88%) contrast(100%);
+	width: 28px;
+	height: 29px;
+}
+.source {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+	margin-bottom: 65px;
 }
