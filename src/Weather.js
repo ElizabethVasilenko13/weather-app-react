@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import ForecastForFiveDays from "./ForecastForFiveDays";
 import TomorrowForecast from "./TomorrowForecast";
 import WeatherDeskr from "./WeatherDeskr";
@@ -26,7 +27,7 @@ return (
 					<Input />
 					<div className="local-time reduce-font">Your Local Time:</div>
 					<CityTime
-					icon={faLocationDot}
+						icon={faLocationDot}
 						cityName="New York"
 						month="July"
 						dayNum="20"
