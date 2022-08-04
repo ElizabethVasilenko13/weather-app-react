@@ -1,19 +1,19 @@
 import React from "react";
 import CurrentWeatherImg from "./CurrentWeatherImg";
 
-export default function CurrentWeather() {
+export default function CurrentWeather(props) {
 return (
 	<div className="temperature ">
 		<div className="tempereture-content">
-			<div className="content-weater">Clouds</div>
+			<div className="content-weater text-capitalize">{props.deskr}</div>
 			<span className="content-degrees" id="degrees">
-				26
+				{props.temp}
 			</span>
 			<div className="link">
-				<a href="#" id="celsius" className="link-degrees">
+				<a href="/" id="celsius" className="link-degrees">
 				°C
 				</a>
-				<a href="#" id="fahrenheit" className="link-degrees">
+				<a href="/" id="fahrenheit" className="link-degrees">
 				°F
 				</a>
 			</div>
