@@ -15,7 +15,7 @@ import {faWind} from '@fortawesome/free-solid-svg-icons';
 export default function Weather(props) {
 	const [weather, setWeather] = useState({ ready: false });
 	const [city, setSity] = useState(props.defaultCity);
-
+	const apiKey = "094780c710fa4efd669f0df8c3991927";
 	function getWeather(response) {
 		console.log(response.data);
 		setWeather({
@@ -24,7 +24,7 @@ export default function Weather(props) {
 			temperature: response.data.main.temp,
 			humidity: response.data.main.humidity,
 			visibility: response.data.visibility / 1000,
-			description: response.data.weather[0].description,
+			description: response.data.weather[0].main,
 			icon: response.data.weather[0].icon,
 			wind: response.data.wind.speed,
 			city: response.data.name
@@ -41,11 +41,17 @@ export default function Weather(props) {
 	}
 
 	function searchWeather(){
-		const apiKey = "094780c710fa4efd669f0df8c3991927";
 		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 		axios.get(apiUrl).then(getWeather);
 	}
 	
+	function handlePosition(e){
+		e.preventDefault();
+		navigator.geolocation.getCurrentPosition((position) => {
+		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;;
+		axios.get(apiUrl).then(getWeather);
+		});
+	}
 	if(weather.ready){
 		return (
 		<div>
@@ -69,7 +75,7 @@ export default function Weather(props) {
 								<button className="iput-btn " id="btn-search">
 									Search
 								</button>
-								<button className="iput-btn" id="btn-current">
+								<button className="iput-btn" id="btn-current" onClick={handlePosition}>
 									Current
 								</button>
 								</form>
@@ -77,12 +83,10 @@ export default function Weather(props) {
 							<div className="local-time reduce-font">Your Local Time:</div>
 							<CityTime
 								icon={faLocationDot}
-								cityName={props.defaultCity}
-								date={weather.date}
+								data={weather}
 							/>
 							<CurrentWeather 
-							temp={Math.round(weather.temperature)}
-							deskr={weather.description}
+								data={weather}
 							/>
 							<div className="bottom-data">
 								<WeatherDeskr
