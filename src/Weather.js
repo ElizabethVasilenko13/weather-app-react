@@ -8,15 +8,14 @@ import CityTime from "./CityTime";
 import "./index.css";
 
 import {faEye} from '@fortawesome/free-regular-svg-icons';
-import {faDroplet} from '@fortawesome/free-solid-svg-icons';
-import {faWind} from '@fortawesome/free-solid-svg-icons';
+
 
 export default function Weather(props) {
 	const [weather, setWeather] = useState({ ready: false });
 	const [city, setSity] = useState(props.defaultCity);
 	const apiKey = "094780c710fa4efd669f0df8c3991927";
+
 	function getWeather(response) {
-		console.log(response.data);
 		setWeather({
 			ready: true,
 			date: new Date(response.data.dt * 1000),
@@ -29,6 +28,7 @@ export default function Weather(props) {
 			city: response.data.name
 		});
 	}
+	
 	function handleSubmit(e){
 		e.preventDefault();
 		searchWeather();
@@ -95,13 +95,13 @@ export default function Weather(props) {
 									deskr="Visibility"
 								/>
 								<WeatherDeskr
-									icon={faDroplet} 
+									icon="droplet"
 									text={weather.humidity}
 									unit="%"
 									deskr="Humidity"
 								/>
 								<WeatherDeskr
-									icon={faWind} 
+									icon="wind" 
 									text={weather.wind}
 									unit="km/h"
 									deskr="Wind"

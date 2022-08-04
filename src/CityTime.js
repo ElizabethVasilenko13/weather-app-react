@@ -1,6 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function CityTime(props) {
 	let date = new Date();
@@ -42,7 +41,7 @@ export default function CityTime(props) {
 	return (
 	<div className="row">
 		<div className="col-6 icon-el">
-			<FontAwesomeIcon icon={faLocationDot} className="icons__firs-page" />
+			<FontAwesomeIcon icon="location-dot" className="icons__firs-page" />
 			<div className="icon-text" id="default-city">
 				{props.data.city}
 			</div>
