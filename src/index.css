@@ -5,7 +5,7 @@
 	box-shadow: 10px 10px 30px rgb(0 0 0 / 15%);
 	border-radius: 50px;
 	color: #343434;
-	font-size: 18px;
+	font-size: 17px;
 }
 .wrap {
 	padding: 6px 40px 40px;
@@ -98,9 +98,6 @@ input[type="text"] {
 	align-items: center;
 	text-align: center;
 	margin: 45px auto;
-}
-.content-weater {
-	font-size: 20px;
 }
 .content-degrees {
 	display: block;

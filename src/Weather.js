@@ -20,6 +20,7 @@ export default function Weather(props) {
 		console.log(response.data);
 		setWeather({
 			ready: true,
+			date: new Date(response.data.dt * 1000),
 			temperature: response.data.main.temp,
 			humidity: response.data.main.humidity,
 			visibility: response.data.visibility / 1000,
@@ -77,11 +78,7 @@ export default function Weather(props) {
 							<CityTime
 								icon={faLocationDot}
 								cityName={props.defaultCity}
-								month="July"
-								dayNum="20"
-								day="Tuesday"
-								hour="15"
-								minute="01"
+								date={weather.date}
 							/>
 							<CurrentWeather 
 							temp={Math.round(weather.temperature)}
