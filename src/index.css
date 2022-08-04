@@ -124,7 +124,8 @@ input[type="text"] {
 	left: 11px;
 }
 .white-icon {
-	filter: invert(99%) sepia(5%) saturate(492%) hue-rotate(209deg) brightness(112%) contrast(92%);
+	font-size: 100px;
+	color: #000000;
 }
 .bottom-data {
 	display: flex;

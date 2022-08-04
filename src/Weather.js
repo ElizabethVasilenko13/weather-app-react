@@ -7,7 +7,6 @@ import CurrentWeather from "./CurrentWeather";
 import CityTime from "./CityTime";
 import "./index.css";
 
-import {faLocationDot} from '@fortawesome/free-solid-svg-icons';
 import {faEye} from '@fortawesome/free-regular-svg-icons';
 import {faDroplet} from '@fortawesome/free-solid-svg-icons';
 import {faWind} from '@fortawesome/free-solid-svg-icons';
@@ -24,8 +23,8 @@ export default function Weather(props) {
 			temperature: response.data.main.temp,
 			humidity: response.data.main.humidity,
 			visibility: response.data.visibility / 1000,
-			description: response.data.weather[0].main,
 			icon: response.data.weather[0].icon,
+			description: response.data.weather[0].main,
 			wind: response.data.wind.speed,
 			city: response.data.name
 		});
@@ -48,10 +47,11 @@ export default function Weather(props) {
 	function handlePosition(e){
 		e.preventDefault();
 		navigator.geolocation.getCurrentPosition((position) => {
-		let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;;
-		axios.get(apiUrl).then(getWeather);
-		});
+			let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&appid=${apiKey}`;;
+			axios.get(apiUrl).then(getWeather);
+			});
 	}
+
 	if(weather.ready){
 		return (
 		<div>
@@ -82,7 +82,6 @@ export default function Weather(props) {
 							</div>
 							<div className="local-time reduce-font">Your Local Time:</div>
 							<CityTime
-								icon={faLocationDot}
 								data={weather}
 							/>
 							<CurrentWeather 
