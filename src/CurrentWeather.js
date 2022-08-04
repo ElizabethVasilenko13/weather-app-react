@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function CurrentWeather(props) {
+	const [unit, setUnit] = useState('celsius');
+	
 	const icons = {
 		"01d": "sun",
 		"01n": "moon",
@@ -22,24 +24,52 @@ export default function CurrentWeather(props) {
 		"50d": "smog",
 		"50n": "smog",
 	};
-
-	return (
-		<div className="temperature ">
-			<div className="tempereture-content">
-				<div className="text-capitalize">{props.data.description}</div>
-				<span className="content-degrees" id="degrees">
-					{Math.round(props.data.temperature)}
-				</span>
-				<div className="link">
-					<a href="/" id="celsius" className="link-degrees">
-					°C
-					</a>
-					<a href="/" id="fahrenheit" className="link-degrees">
-					°F
-					</a>
+	function showFahrenheit(e){
+		e.preventDefault();
+		setUnit('fahrenheit');
+		
+	}
+	function showCelsius(e){
+		e.preventDefault();
+		setUnit('celsius');
+	}
+	if(unit === 'celsius'){
+		return (
+			<div className="temperature ">
+				<div className="tempereture-content">
+					<div className="text-capitalize">{props.data.description}</div>
+					<span className="content-degrees" id="degrees">
+						{Math.round(props.data.temperature)}
+					</span>
+					<div className="link">
+						°C
+						<a href="/" id="fahrenheit" className="link-degrees" onClick={showFahrenheit}>
+						°F
+						</a>
+					</div>
 				</div>
+				<FontAwesomeIcon icon={icons[props.data.icon]} className="icon-element white-icon"/>
 			</div>
-			<FontAwesomeIcon icon={icons[props.data.icon]} className="icon-element white-icon"/>
-		</div>
-	);
+			);
+	} else {
+		let fahrenheit = Math.round((props.data.temperature * 9/5) + 32);
+		return (
+			<div className="temperature ">
+				<div className="tempereture-content">
+					<div className="text-capitalize">{props.data.description}</div>
+					<span className="content-degrees" id="degrees">
+						{fahrenheit}
+					</span>
+					<div className="link">
+						<a href="/" id="fahrenheit" className="link-degrees" onClick={showCelsius}>
+						°C
+						</a>
+						°F
+					</div>
+				</div>
+				<FontAwesomeIcon icon={icons[props.data.icon]} className="icon-element white-icon"/>
+			</div>
+			);
+	}
+	
 }
