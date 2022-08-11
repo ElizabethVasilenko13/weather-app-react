@@ -3,10 +3,10 @@ import axios from "axios";
 import ForecastForFiveDays from "./ForecastForFiveDays";
 import TomorrowForecast from "./TomorrowForecast";
 import WeatherDeskr from "./WeatherDeskr";
-import CurrentWeather from "./CurrentWeather";
+import CurrentWeatherImg from "./CurrentWeatherImg";
 import CityTime from "./CityTime";
 import "./index.css";
-
+import WeatherTemp from "./WeatherTemp";
 import {faEye} from '@fortawesome/free-regular-svg-icons';
 
 
@@ -84,9 +84,12 @@ export default function Weather(props) {
 							<CityTime
 								data={weather}
 							/>
-							<CurrentWeather 
+							<div className="temperature">
+							<WeatherTemp data={weather}/>
+							<CurrentWeatherImg 
 								data={weather}
 							/>
+							</div>
 							<div className="bottom-data">
 								<WeatherDeskr
 									icon={faEye} 

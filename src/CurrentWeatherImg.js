@@ -1,7 +1,8 @@
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import WeatherTemp from "./WeatherTemp";
 
-export default function CurrentWeather(props) {
+
+export default function CurrentWeatherImg(props) {
 	const icons = {
 		"01d": "sun",
 		"01n": "moon",
@@ -23,9 +24,6 @@ export default function CurrentWeather(props) {
 		"50n": "smog",
 	};
 		return (
-			<div className="temperature ">
-				<WeatherTemp data={props.data}/>
 				<FontAwesomeIcon icon={icons[props.data.icon]} className="icon-element white-icon"/>
-			</div>
 			);
 }

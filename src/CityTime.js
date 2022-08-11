@@ -39,14 +39,14 @@ export default function CityTime(props) {
 		minutes = `0${minutes}`;
 	}
 	return (
-	<div className="row">
-		<div className="col-6 icon-el">
+	<div className="city-deskr">
+		<div className="icon-el">
 			<FontAwesomeIcon icon="location-dot" className="icons__firs-page" />
 			<div className="icon-text" id="default-city">
 				{props.data.city}
 			</div>
 		</div>
-		<div className="col-6 day">
+		<div className="day">
 			{months[mounth]} {monthDay},  {daysOfWeek[dayWeek]} {hours}:{minutes}
 		</div>
 	</div>

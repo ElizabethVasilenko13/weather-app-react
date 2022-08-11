@@ -186,3 +186,7 @@ input[type="text"] {
     padding: 0;
 	margin-bottom: 65px;
 }
+.city-deskr{
+	display: flex;
+	justify-content: space-between;
+}
