@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import ForecastForFiveDays from "./ForecastForFiveDays";
 import TomorrowForecast from "./TomorrowForecast";
 import axios from "axios";
@@ -11,8 +11,10 @@ export default function Forecast(props){
 	function handleResponse(response) {
 		setForecast(response.data.daily);
     	setLoaded(true);
-		console.log(response.data.daily);
 	}
+	useEffect(() => {
+		setLoaded(false);
+ 	}, [props.data]);
 
 	function load() {
 		let longitude = props.data.lon;

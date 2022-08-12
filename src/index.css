@@ -8,7 +8,7 @@
 	font-size: 17px;
 }
 .wrap {
-	padding: 6px 40px 40px;
+	padding:  40px 40px;
 }
 .theme-sw {
 	padding-bottom: 6px;
@@ -19,30 +19,6 @@
 .theme-sw-text {
 	margin-right: 5px;
 	color: rgba(178, 179, 199, 0.74);
-}
-.switch-btn {
-	width: 65px;
-	height: 29px;
-	border-radius: 19px;
-	background: #bfbfbfc6;
-	z-index: 0;
-	padding: 0;
-	border: none;
-	cursor: pointer;
-	position: relative;
-	transition-duration: 300ms;
-}
-.switch-btn::after {
-	content: "";
-	height: 25px;
-	width: 25px;
-	border-radius: 17px;
-	background: #fff;
-	top: 2px;
-	left: 2px;
-	transition-duration: 300ms;
-	position: absolute;
-	z-index: 1;
 }
 
 input[type="text"] {
@@ -89,10 +65,8 @@ input[type="text"] {
 	border-radius: 30px;
 	max-width: 200px;
 	color: #f5f5f5;
-	margin: 0 auto;
 	font-weight: 500;
 	padding: 30px;
-	padding-bottom: 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -104,25 +78,12 @@ input[type="text"] {
 	line-height: 90px;
 	font-size: 85px;
 }
-.link {
-	position: relative;
-	bottom: 76px;
-	left: 68px;
-	margin-left: 10px;
-}
-.link-degrees {
-	color: #f5f5f5;
-	text-decoration: none;
-	font-weight: normal;
-	padding: 4px;
-}
+
 .temperature  .icon-element {
 	position: relative;
 	top: 47px;
-	left: 11px;
-	
+	right: 15px;
 }
-
 .icon-element {
 	filter: invert(99%) sepia(5%) saturate(492%) hue-rotate(209deg)
 	brightness(112%) contrast(92%);

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Weather from './Weather';
-import reportWebVitals from './reportWebVitals';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {faSun, faMoon, faCloudSun, 
 		faCloudMoon, faCloud, faCloudShowersHeavy, 
@@ -22,4 +22,4 @@ library.add(faSun, faMoon,  faCloudSun,
 			faCloudBolt, faSnowflake, faSmog, 
 			faDroplet, faWind, faLocationDot);
 
-reportWebVitals();
+

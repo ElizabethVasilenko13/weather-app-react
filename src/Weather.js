@@ -13,8 +13,9 @@ export default function Weather(props) {
 	const [weather, setWeather] = useState({ ready: false });
 	const [city, setSity] = useState(props.defaultCity);
 	const apiKey = "094780c710fa4efd669f0df8c3991927";
-
+	
 	function getWeather(response) {
+		console.log(response.data);
 		setWeather({
 			ready: true,
 			date: new Date(response.data.dt * 1000),
@@ -22,7 +23,7 @@ export default function Weather(props) {
 			humidity: response.data.main.humidity,
 			visibility: response.data.visibility / 1000,
 			icon: response.data.weather[0].icon,
-			description: response.data.weather[0].main,
+			description: response.data.weather[0].description,
 			wind: response.data.wind.speed,
 			city: response.data.name,
 			coord: response.data.coord
@@ -54,14 +55,11 @@ export default function Weather(props) {
 
 	if(weather.ready){
 		return (
-		<div>
+			<div>
 			<div className="wrapper">
 				<div className="container">
 					<div className="row wrap">
-						<div className="theme-sw">
-							<div className="theme-sw-text reduce-font">Switch theme</div>
-							<div className="switch-btn reduce-font"></div>
-						</div>
+						
 						<div className="col-6 first-part">
 							<div className="search-input">
 								<form id="search-form" onSubmit={handleSubmit}>
