@@ -22,22 +22,24 @@ export default function Forecast(props){
 	}
 	if(loaded){
 		return (
-		<div className="container">
-			<TomorrowForecast data = {forecast[1]}/>
 			<div className="container">
-				<div className="row future-forecast-days">
-
-					<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-					<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-					<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-					<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-					<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
+				<TomorrowForecast data = {forecast[1]}/>
+				<div className="container">
+					<div className="row future-forecast-days">
+						{forecast.map((dailyForecast, index) => {
+							if ( index < 5){
+								return (
+									<ForecastForFiveDays  data={dailyForecast} key={index}/>
+										);
+							} else {
+								return null;
+							}
+						})}
+					</div>
 				</div>
 			</div>
-		</div>
-	);
-	}
-	else {
+			);
+	}else {
 		load();
 		return null;
 	}

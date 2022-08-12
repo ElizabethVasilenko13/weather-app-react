@@ -116,11 +116,13 @@ input[type="text"] {
 	font-weight: normal;
 	padding: 4px;
 }
-.temperature .icon-element{
+.temperature  .icon-element {
 	position: relative;
 	top: 47px;
 	left: 11px;
+	
 }
+
 .icon-element {
 	filter: invert(99%) sepia(5%) saturate(492%) hue-rotate(209deg)
 	brightness(112%) contrast(92%);
@@ -128,6 +130,12 @@ input[type="text"] {
 .white-icon {
 	font-size: 100px;
 	color: #000000;
+}
+.block .white-icon {
+	margin-bottom: 10px;
+	filter: invert(79%) sepia(35%) saturate(6248%) hue-rotate(276deg) brightness(88%) contrast(100%);
+	width: 28px;
+	height: 29px;
 }
 .bottom-data {
 	display: flex;
@@ -175,12 +183,6 @@ input[type="text"] {
 }
 .block-title {
 	margin-bottom: 10px;
-}
-.weather-icon {
-	margin-bottom: 10px;
-	filter: invert(79%) sepia(35%) saturate(6248%) hue-rotate(276deg) brightness(88%) contrast(100%);
-	width: 28px;
-	height: 29px;
 }
 .source {
     text-align: center;
