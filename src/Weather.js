@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import ForecastForFiveDays from "./ForecastForFiveDays";
-import TomorrowForecast from "./TomorrowForecast";
 import WeatherDeskr from "./WeatherDeskr";
 import CurrentWeatherImg from "./CurrentWeatherImg";
 import CityTime from "./CityTime";
 import "./index.css";
 import WeatherTemp from "./WeatherTemp";
+import Forecast from './Forecast';
 import {faEye} from '@fortawesome/free-regular-svg-icons';
 
 
@@ -25,7 +24,8 @@ export default function Weather(props) {
 			icon: response.data.weather[0].icon,
 			description: response.data.weather[0].main,
 			wind: response.data.wind.speed,
-			city: response.data.name
+			city: response.data.name,
+			coord: response.data.coord
 		});
 	}
 	
@@ -85,10 +85,8 @@ export default function Weather(props) {
 								data={weather}
 							/>
 							<div className="temperature">
-							<WeatherTemp data={weather}/>
-							<CurrentWeatherImg 
-								data={weather}
-							/>
+								<WeatherTemp data={weather}/>
+								<CurrentWeatherImg data={weather}/>
 							</div>
 							<div className="bottom-data">
 								<WeatherDeskr
@@ -113,22 +111,7 @@ export default function Weather(props) {
 						</div>
 						<div className="col-6 second-part">
 							<div className="container">
-								<TomorrowForecast
-									day="Tomorrow"
-									deskr="Clear"
-									AvDegree="25"
-									max="26"
-									min="35"
-								/>
-								<div className="container">
-									<div className="row future-forecast-days">
-										<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-										<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-										<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-										<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-										<ForecastForFiveDays dayOfTheWeek="Tue" temp={29} />
-									</div>
-								</div>
+								<Forecast data={weather.coord}/>
 							</div>
 						</div>
 					</div>

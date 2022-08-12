@@ -116,12 +116,14 @@ input[type="text"] {
 	font-weight: normal;
 	padding: 4px;
 }
-.icon-element {
-	filter: invert(99%) sepia(5%) saturate(492%) hue-rotate(209deg)
-	brightness(112%) contrast(92%);
+.temperature .icon-element{
 	position: relative;
 	top: 47px;
 	left: 11px;
+}
+.icon-element {
+	filter: invert(99%) sepia(5%) saturate(492%) hue-rotate(209deg)
+	brightness(112%) contrast(92%);
 }
 .white-icon {
 	font-size: 100px;

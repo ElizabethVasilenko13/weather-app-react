@@ -1,28 +1,23 @@
 import React from "react";
-import image from "./01d.svg";
+import CurrentWeatherImg from "./CurrentWeatherImg";
 
 export default function TomorrowForecast(props) {
 return (
 	<div className="future-forecast">
 		<div className="block-forecast ">
-			<img
-				src={image}
-				className="fa-cloud-rain white-icon "
-				width="130"
-				height="130"
-			/>
+			<CurrentWeatherImg data={props.data.weather[0]}/>
 			<div className="future-content  text-center">
-				<div className="content-weater">{props.day}</div>
-				<div className="future-deskr">{props.deskr}</div>
+				<div className="content-weater">Tomorrow</div>
+				<div className="future-deskr text-capitalize">{props.data.weather[0].description}</div>
 				<div id="tomorrow-weather" className="content-degrees">
-					{props.AvDegree}°
+					{Math.round(((props.data.temp.max) + (props.data.temp.max)) / 2)}°
 				</div>
 				<div>
 					<span id="max-temp" className="block-degrees">
-						Max: {props.max}°/
+						Max: {Math.round(props.data.temp.max)}°/
 					</span>
 					<span id="min-temp" className="block-degrees">
-						Min: {props.min}°
+						Min: {Math.round(props.data.temp.max)}°
 					</span>
 				</div>
 			</div>
